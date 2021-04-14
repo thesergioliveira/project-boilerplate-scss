@@ -22,7 +22,7 @@ An HTML CSS boilerplate with built-in sass support:
 1. Clone this repository into a new project folder (replace `[project name]` with your project's name)
 
    ```
-   git clone git@github.com:D [project name]
+   git clone git@github.com:Fbw-48/project-boilerplate-scss.git [project name]
    ```
 
 1. Delete the boilerplate's git history to ensure that the project history only includes your commits
