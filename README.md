@@ -154,3 +154,31 @@ npm run build
 ```
 
 This folder will contain your built project, ready to be deployed online. It is excluded from `git` tracking since it is not customary to include compiled code in a development project.
+
+Note if you want to start from scratch you need 
+## initialise npm in your project 
+```bash
+npm init -y
+```
+## install some Dev-Dependencies
+```bash
+npm i --save-dev gh-pages sass npm-run-all live-server
+```
+
+## add some scripts to your `package.json`
+```bash
+"scripts": {
+    "start": "run-p watch watch:styles",
+    "build": "run-s clean clean:styles build:styles copy",
+    "deploy": "run-s build publish",
+    "build:styles": "sass src/scss:src/styles",
+    "watch": "live-server src",
+    "watch:styles": "sass src/scss:src/styles --watch",
+    "clean": "rm -rf dist",
+    "clean:styles": "rm -rf src/styles",
+    "copy": "mkdir dist && rsync -avr --exclude=\"/scss\" src/ dist",
+    "publish": "gh-pages -d dist"
+  },
+```
+ 
+
